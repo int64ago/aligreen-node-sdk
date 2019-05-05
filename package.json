@@ -1,6 +1,6 @@
 {
   "name": "@aligreen/sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial Node SDK for aligreen.",
   "main": "lib/index.js",
   "types": "lib/types.d.ts",
