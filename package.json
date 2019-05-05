@@ -1,5 +1,5 @@
 {
-  "name": "aligreen-node-sdk",
+  "name": "@aligreen/sdk",
   "version": "1.0.0",
   "description": "Unofficial Node SDK for aligreen.",
   "main": "lib/index.js",
