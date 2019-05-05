@@ -56,7 +56,7 @@ client.request('ImageSyncScanRequest', {
 
 ## API
 
-Here `action` is the same in [Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-green/aliyunsdkgreen/request/v20180509), here's a [relation map](https://github.com/int64ago/aligreen-node-sdk/lib/actions.json) between `action` and `path`.
+Here `action` is the same in [Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-green/aliyunsdkgreen/request/v20180509), here's a [relation map](https://github.com/int64ago/aligreen-node-sdk/blob/master/lib/actions.json) between `action` and `path`.
 
 For more details, please read the [official documents](https://help.aliyun.com/document_detail/63004.html).
 
@@ -121,5 +121,5 @@ MIT
  [npm-url]: https://npmjs.org/package/@aligreen/sdk
  [download-image]: https://img.shields.io/npm/dm/@aligreen/sdk.svg?style=flat-square
  [download-url]: https://npmjs.org/package/@aligreen/sdk
- [travis-url]: https://travis-ci.com/int64ago/aligreen-node-sdk
+ [travis-url]: https://travis-ci.org/int64ago/aligreen-node-sdk
  [travis-image]: https://img.shields.io/travis/int64ago/aligreen-node-sdk.svg?style=flat-square
