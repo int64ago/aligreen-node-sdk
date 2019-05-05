@@ -8,7 +8,7 @@ aligreen-node-sdk
 
 Unofficial Node SDK for aligreen.
 
-阿里云 - 云盾 - 内容安全 API 非官方 NodeJS SDK
+阿里云 - 云盾 - [内容安全](https://yundun.console.aliyun.com/?p=cts) API 非官方 NodeJS SDK
 
 > **Note:** Node >= v8 LTS
 
@@ -58,7 +58,7 @@ client.request('ImageSyncScanRequest', {
 
 Here `action` is the same in [Python SDK](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-green/aliyunsdkgreen/request/v20180509), here's a [relation map](https://github.com/int64ago/aligreen-node-sdk/blob/master/lib/actions.json) between `action` and `path`.
 
-For more details, please read the [official documents](https://help.aliyun.com/document_detail/63004.html).
+For more details, please read the [official documents](https://help.aliyun.com/document_detail/70409.html).
 
 ```typescript
 export = AliGreenSDK;
