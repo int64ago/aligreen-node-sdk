@@ -1,3 +1,4 @@
+const { resolve } = require('path');
 const test = require('ava');
 const uuidV4 = require('uuid/v4');
 
@@ -9,7 +10,7 @@ const client = new AliGreenSDK({
   regionId: 'cn-shanghai',
 });
 
-test('bar', t => {
+test('detect with url', t => {
   return client.request('ImageSyncScanRequest', {
     scenes: ['porn'],
     tasks: [
@@ -20,5 +21,21 @@ test('bar', t => {
     ],
   }).then(result => {
     t.is(result.code, 200);
+  });
+});
+
+test('detect with local file', t => {
+  return client.upload(resolve(__dirname, 'test.png')).then(url => {
+    return client.request('ImageSyncScanRequest', {
+      scenes: ['porn'],
+      tasks: [
+        {
+          dataId: `dataId_${uuidV4()}`,
+          url,
+        }
+      ],
+    }).then(result => {
+      t.is(result.code, 200);
+    });
   });
 });

@@ -4,6 +4,8 @@ declare class AliGreenSDK {
   constructor(options: IOptions);
 
   request(action: string, params?: IJSON): Promise<any>;
+
+  upload(filepath: string): Promise<string>;
 }
 
 interface IJSON {

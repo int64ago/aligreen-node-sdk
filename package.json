@@ -14,6 +14,7 @@
   "author": "Cody Chan <int64ago@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ali-oss": "^6.1.1",
     "is-plain-object": "^3.0.0",
     "node-fetch": "^2.5.0",
     "uuid": "^3.3.2"
