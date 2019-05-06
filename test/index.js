@@ -25,7 +25,7 @@ test('detect with url', async t => {
 
 test('detect with local file', async t => {
   const url = await client.upload(resolve(__dirname, 'test.png'));
-  const result = await client.request('ImageSyncScanRequest', {
+  const result = await client.request('/green/image/scan', {
     scenes: ['porn'],
     tasks: [
       {
