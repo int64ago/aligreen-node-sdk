@@ -39,24 +39,24 @@ const client = new AliGreenSDK({
   regionId: 'cn-shanghai',
 });
 
-// detect with url
-client.request('ImageSyncScanRequest', {
-  scenes: ['porn'],
-  tasks: [
-    {
-      dataId: uuidV4(), // unique
-      url: 'https://img.alicdn.com/tfs/TB1urBOQFXXXXbMXFXXXXXXXXXX-1442-257.png',
-    }
-  ],
-}).then(result => {
-  // Do what you want
-  console.log(result);
-});
+(async () => {
+
+  // detect with url
+  const result1 = await client.request('ImageSyncScanRequest', {
+    scenes: ['porn'],
+    tasks: [
+      {
+        dataId: uuidV4(), // unique
+        url: 'https://img.alicdn.com/tfs/TB1urBOQFXXXXbMXFXXXXXXXXXX-1442-257.png',
+      }
+    ],
+  });
+  console.log(result1);
 
 
-// detect with local file
-client.upload('/path/of/file').then(url => {
-  client.request('ImageSyncScanRequest', {
+  // detect with local file
+  const url = await client.upload('/path/of/file');
+  const result2 = await client.request('ImageSyncScanRequest', {
     scenes: ['porn'],
     tasks: [
       {
@@ -64,11 +64,10 @@ client.upload('/path/of/file').then(url => {
         url,
       }
     ],
-  }).then(result => {
-    // Do what you want
-    console.log(result);
   });
-});
+  console.log(result2);
+
+})();
 ```
 
 ## API
