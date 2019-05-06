@@ -39,7 +39,7 @@ const client = new AliGreenSDK({
   regionId: 'cn-shanghai',
 });
 
-// Make a request
+// detect with url
 client.request('ImageSyncScanRequest', {
   scenes: ['porn'],
   tasks: [
@@ -51,6 +51,23 @@ client.request('ImageSyncScanRequest', {
 }).then(result => {
   // Do what you want
   console.log(result);
+});
+
+
+// detect with local file
+client.upload('/path/of/file').then(url => {
+  client.request('ImageSyncScanRequest', {
+    scenes: ['porn'],
+    tasks: [
+      {
+        dataId: uuidV4(),
+        url,
+      }
+    ],
+  }).then(result => {
+    // Do what you want
+    console.log(result);
+  });
 });
 ```
 
