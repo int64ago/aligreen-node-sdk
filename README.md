@@ -82,8 +82,17 @@ export = AliGreenSDK;
 declare class AliGreenSDK {
   constructor(options: IOptions);
 
+  /**
+   * Make a detect request
+   * @param action Request action name or url path
+   * @param params Request parameters
+   */
   request(action: string, params?: IJSON): Promise<any>;
 
+  /**
+   * Upload local file to OSS
+   * @param filepath Absolute local file path
+   */
   upload(filepath: string): Promise<string>;
 }
 
