@@ -39,19 +39,35 @@ const client = new AliGreenSDK({
   regionId: 'cn-shanghai',
 });
 
-// Make a request
-client.request('ImageSyncScanRequest', {
-  scenes: ['porn'],
-  tasks: [
-    {
-      dataId: uuidV4(), // unique
-      url: 'https://img.alicdn.com/tfs/TB1urBOQFXXXXbMXFXXXXXXXXXX-1442-257.png',
-    }
-  ],
-}).then(result => {
-  // Do what you want
-  console.log(result);
-});
+(async () => {
+
+  // detect with url
+  const result1 = await client.request('ImageSyncScanRequest', {
+    scenes: ['porn'],
+    tasks: [
+      {
+        dataId: uuidV4(), // unique
+        url: 'https://img.alicdn.com/tfs/TB1urBOQFXXXXbMXFXXXXXXXXXX-1442-257.png',
+      }
+    ],
+  });
+  console.log(result1);
+
+
+  // detect with local file
+  const url = await client.upload('/path/of/file');
+  const result2 = await client.request('ImageSyncScanRequest', {
+    scenes: ['porn'],
+    tasks: [
+      {
+        dataId: uuidV4(),
+        url,
+      }
+    ],
+  });
+  console.log(result2);
+
+})();
 ```
 
 ## API
@@ -67,6 +83,8 @@ declare class AliGreenSDK {
   constructor(options: IOptions);
 
   request(action: string, params?: IJSON): Promise<any>;
+
+  upload(filepath: string): Promise<string>;
 }
 
 interface IJSON {
