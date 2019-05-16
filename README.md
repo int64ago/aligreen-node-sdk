@@ -148,5 +148,5 @@ MIT
  [npm-url]: https://npmjs.org/package/@aligreen/sdk
  [download-image]: https://img.shields.io/npm/dm/@aligreen/sdk.svg?style=flat-square
  [download-url]: https://npmjs.org/package/@aligreen/sdk
- [travis-url]: https://travis-ci.org/int64ago/aligreen-node-sdk
- [travis-image]: https://img.shields.io/travis/int64ago/aligreen-node-sdk.svg?style=flat-square
+ [travis-url]: https://travis-ci.com/int64ago/aligreen-node-sdk
+ [travis-image]: https://img.shields.io/com/travis/int64ago/aligreen-node-sdk.svg?style=flat-square
